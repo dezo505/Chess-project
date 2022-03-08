@@ -100,7 +100,7 @@ public class GamePanel extends ProgramPanel{
 		onMoveImage.setBounds(height * 8/8 + height * 3/16, height * 6/8, height * 1/8, height * 1/8);
 		this.add(onMoveImage);
 		
-		JButton undoButton = new JButton("Cofnij");
+		JButton undoButton = new JButton("Undo");
 		undoButton.setBounds(height * 8/8, height * 1/8, height * 3/16, height * 1/16);
 		undoButton.addActionListener(new ActionListener() {
 
@@ -120,7 +120,7 @@ public class GamePanel extends ProgramPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(panelGame.getGameLength() != 0){
-					if(JOptionPane.showConfirmDialog (null, "Czy napewno chcesz zrestartowaæ grê?","restart",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+					if(JOptionPane.showConfirmDialog (null, "Do you want to restart game?","Restart",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
 						restart();
 						update();
 					}
@@ -263,16 +263,16 @@ public class GamePanel extends ProgramPanel{
 						case 1:
 							JOptionPane.showMessageDialog(
 								    null,  
-								    "Bia³y wygrywa!",
-								    "wynik",
+								    "White wins!",
+								    "Result",
 								    JOptionPane.INFORMATION_MESSAGE, 
 								    pieceIcons.get("wp")); 
 							break;
 						case 2:
 							JOptionPane.showMessageDialog(
 								    null, 
-								    "Czarny wygrywa!", 
-								    "wynik",
+								    "Black wins!", 
+								    "Result",
 								    JOptionPane.INFORMATION_MESSAGE, 
 								    pieceIcons.get("bp")); 
 							
@@ -286,7 +286,7 @@ public class GamePanel extends ProgramPanel{
 							
 							break;
 						}
-						int restart = JOptionPane.showConfirmDialog (null, "Czy chcesz zrestartowaæ grê?","restart",JOptionPane.YES_NO_OPTION);
+						int restart = JOptionPane.showConfirmDialog (null, "Do you want to restart game?","Restart",JOptionPane.YES_NO_OPTION);
 						if(restart == JOptionPane.YES_OPTION)restart();
 					}
 				}
